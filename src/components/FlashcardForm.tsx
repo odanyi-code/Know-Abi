@@ -11,7 +11,11 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ onCreateCard, isLoading }
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onCreateCard(topic);
+    if (typeof topic !== "string") {
+      throw new Error("Konu metni bir yazı olmalı!");
+    }
+    const lowerTopic = topic.toLowerCase();
+    onCreateCard(lowerTopic);
   };
   
   return (

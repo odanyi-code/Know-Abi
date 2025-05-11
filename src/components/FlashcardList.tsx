@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Flashcard from './Flashcard';
 import { Flashcard as FlashcardType } from '../types';
+import FunctionDrawer from './components/FunctionDrawer';
 
 interface FlashcardListProps {
   cards: FlashcardType[];
