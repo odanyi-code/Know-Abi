@@ -26,7 +26,7 @@ const Controls: React.FC<ControlsProps> = ({
         }`}
       >
         <Eye className="mr-2 h-4 w-4" />
-        Kartları Gör
+        Show Cards
       </button>
       
       <button
@@ -39,7 +39,7 @@ const Controls: React.FC<ControlsProps> = ({
         }`}
       >
         <Trash className="mr-2 h-4 w-4" />
-        Kartları Sil
+        Delete Cards
       </button>
       
       <button
@@ -52,7 +52,7 @@ const Controls: React.FC<ControlsProps> = ({
         }`}
       >
         <Save className="mr-2 h-4 w-4" />
-        Kartları Kaydet (.txt)
+        Save Cards (.txt)
       </button>
     </div>
   );
