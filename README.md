@@ -1,12 +1,12 @@
+# Know-Abi: AI-Powered Flashcard Generator 📚
 
-# KnowAbi 📚
+> *Know-Abi* is an AI-powered flashcard generation tool designed for students. It lets users create, view, and manage flashcards, while integrating with Google's Gemini API to generate question-answer pairs from any topic.
 
-> *KnowAbi* is an AI-powered flashcard generation tool designed for students. It lets users create, view, and manage flashcards, while integrating with Google's Gemini API to generate question-answer pairs from any topic.
+This project was developed in 36 hours by [odanyi-code](https://github.com/odanyi-code) and [GoktugSaylam](https://github.com/GoktugSaylam) for HACKGDG'25 on May 10-11, 2025.
 
 ---
 
 ![logo png](https://github.com/user-attachments/assets/bbec1ab1-00dd-482e-874e-47e7db5215b5)
-
 
 ## 📙 Table of Contents
 
@@ -24,7 +24,7 @@
 
 ## 1. Overview
 
-KnowAbi is a lightweight React + Vite front-end application that helps students create and review flashcards. Users can manually create flashcards or let Gemini AI generate them automatically based on a chosen topic. It's perfect for quick revision, spaced repetition, and interactive learning.
+Know-Abi is a lightweight React + Vite front-end application that helps students create and review flashcards. Users can manually create flashcards or let Gemini AI generate them automatically based on a chosen topic. It's perfect for quick revision, spaced repetition, and interactive learning.
 
 ---
 
@@ -62,8 +62,8 @@ KnowAbi is a lightweight React + Vite front-end application that helps students 
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/odanyi/KnowAbi.git
-cd KnowAbi
+git clone https://github.com/odanyi/Know-Abi.git
+cd Know-Abi
 
 # 2. Install dependencies
 npm install
@@ -87,10 +87,9 @@ http://localhost:5173
 ## 5. Folder Structure
 
 ```
-KnowAbi/
-├── public/
-│   └── assets/                # Logo and images
+Know-Abi/
 ├── src/
+│   ├── assets/                # Logo and images
 │   ├── components/            # Flashcard, Form, Controls, List
 │   ├── hooks/                 # useFlashcards custom hook
 │   ├── services/              # aiService (Gemini API integration)
