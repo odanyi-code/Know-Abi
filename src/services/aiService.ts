@@ -9,13 +9,13 @@ export const generateFlashcard = async (topic: string = "random"): Promise<{ques
     let prompt: string;
     
     if (!topic || topic.toLowerCase() === "random") {
-      prompt = `Lütfen öğrenciler için kısa bir bilgi kartı oluştur. Yanıtı tam olarak şu formatta ver:
-Soru: [soru metni]
-Cevap: [cevap metni]`;
+      prompt = `Please create a short flashcard for students. Provide the response in the following format exactly:
+Question: [question text]
+Answer: [answer text]`;
     } else {
-      prompt = `Lütfen "${topic}" konusu hakkında öğrenciler için kısa bir bilgi kartı oluştur. Yanıtı tam olarak şu formatta ver:
-Soru: [soru metni]
-Cevap: [cevap metni]`;
+      prompt = `Please create a short flashcard for students on the topic of \"${topic}\". Provide the response in the following format exactly:
+Question: [question text]
+Answer: [answer text]`;
     }
 
     const result = await model.generateContent(prompt);
@@ -23,12 +23,12 @@ Cevap: [cevap metni]`;
     const text = response.text();
 
     // Parse the response to extract question and answer
-    const parts = text.split('Cevap:');
+    const parts = text.split('Answer:');
     if (parts.length !== 2) {
       throw new Error('Invalid response format');
     }
 
-    const question = parts[0].replace('Soru:', '').trim();
+    const question = parts[0].replace('Question:', '').trim();
     const answer = parts[1].trim();
 
     return { question, answer };

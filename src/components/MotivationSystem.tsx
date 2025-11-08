@@ -1,34 +1,35 @@
-// src/components/MotivationSystem.tsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface MotivationSystemProps {
-  cardsCount: number;        // Toplam kart sayısı
-  studyTime: number;         // Çalışma süresi (saniye)
+  cardsCount: number;
+  studyTime: number;
 }
 
-const MotivationSystem = ({ cardsCount, studyTime }: MotivationSystemProps) => {
-  const [message, setMessage] = useState("Hoş geldin! 🌟");
+const MotivationSystem = ({
+  cardsCount,
+  studyTime,
+}: MotivationSystemProps) => {
+  const [message, setMessage] = useState("Welcome! 🌟");
 
   useEffect(() => {
     let currentMessage = "";
-
     if (cardsCount === 0) {
-      currentMessage = "Hoş geldin! 🌟";
+      currentMessage = "Welcome! 🌟";
     } else if (cardsCount === 1) {
-      currentMessage = "İlk kartını oluşturdun! 🎯";
+      currentMessage = "You created your first card! 🎯";
     } else if (cardsCount === 5) {
-      currentMessage = "5 karta ulaştın! 🎯";
+      currentMessage = "You reached 5 cards! 🎯";
     } else if (cardsCount === 10) {
-      currentMessage = "10 karta ulaştın! 🌟";
+      currentMessage = "You reached 10 cards! 🌟";
     } else {
-      // Süreye göre mesajlar
+      // Messages based on time
       const minutes = Math.floor(studyTime / 60);
       if (minutes === 15) {
-        currentMessage = "15 dakikadır çalışıyorsun! ⏰";
+        currentMessage = "You have been studying for 15 minutes! ⏰";
       } else if (minutes === 25) {
-        currentMessage = "25 saattir devam ediyorsun! 💪";
+        currentMessage = "You have been going for 25 minutes! 💪";
       } else {
-        currentMessage = "Öğrenmeye devam! 📚";
+        currentMessage = "Keep learning! 📚";
       }
     }
 
@@ -36,13 +37,8 @@ const MotivationSystem = ({ cardsCount, studyTime }: MotivationSystemProps) => {
   }, [cardsCount, studyTime]);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg flex items-center gap-3">
-        <span className="text-xl font-bold text-gray-900 dark:text-gray-100">{message}</span>
-        <span className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          {cardsCount} kart oluşturuldu • {Math.floor(studyTime / 60)} dakika çalışıldı
-        </span>
-      </div>
+    <div className="motivation-system">
+      <p>{message}</p>
     </div>
   );
 };
