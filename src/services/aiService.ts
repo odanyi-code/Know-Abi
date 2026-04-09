@@ -13,7 +13,7 @@ export const generateFlashcard = async (topic: string = "random"): Promise<{ques
 Question: [question text]
 Answer: [answer text]`;
     } else {
-      prompt = `Please create a short flashcard for students on the topic of \"${topic}\". Provide the response in the following format exactly:
+      prompt = `Please create a short flashcard for students on the topic of "${topic}". Provide the response in the following format exactly:
 Question: [question text]
 Answer: [answer text]`;
     }

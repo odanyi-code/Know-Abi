@@ -3,7 +3,6 @@ import FlashcardForm from './components/FlashcardForm';
 import FlashcardList from './components/FlashcardList';
 import Controls from './components/Controls';
 import { useFlashcards } from './hooks/useFlashcards';
-import { SparklesIcon } from 'lucide-react';
 import logo from './assets/logo.png.png'; // Make sure the file name matches!
 import MotivationSystem from './components/MotivationSystem';
 import DailyGoal from './components/DailyGoal';
@@ -38,7 +37,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -46,11 +45,6 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
-
-  // Kartı çözdüğünde çağrılacak fonksiyon
-  const handleSolveCard = () => {
-    setSolvedCount(prev => prev + 1);
-  };
 
   const handleClearCards = () => {
     // Implement the logic to clear cards
