@@ -3,7 +3,7 @@ import FlashcardForm from './components/FlashcardForm';
 import FlashcardList from './components/FlashcardList';
 import Controls from './components/Controls';
 import { useFlashcards } from './hooks/useFlashcards';
-import logo from './assets/logo.png.png'; // Make sure the file name matches!
+
 import MotivationSystem from './components/MotivationSystem';
 import DailyGoal from './components/DailyGoal';
 import FunctionDrawer from './components/FunctionDrawer';
@@ -22,7 +22,7 @@ function App() {
 
   const [seconds, setSeconds] = useState(0);
   const [studyTime, setStudyTime] = useState(0);
-  const [solvedCount, setSolvedCount] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((prev) => prev + 1);
@@ -55,9 +55,6 @@ function App() {
       <div className="container mx-auto px-4 py-12">
         <header className="mb-12 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-16 h-16">
-              <img src={logo} alt="KnowAbi Logo" className="w-full h-full object-contain" />
-            </div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">KnowAbi</h1>
           </div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -111,14 +108,7 @@ function App() {
         studyTime={studyTime}
       />
 
-      <DailyGoal solvedCount={solvedCount} goal={20} />
-
-      <button
-        onClick={() => setSolvedCount(solvedCount + 1)}
-        className="fixed top-20 left-0 px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Kart Çözdüm!
-      </button>
+      <DailyGoal solvedCount={cards.length} goal={20} />
 
       <FunctionDrawer />
     </div>

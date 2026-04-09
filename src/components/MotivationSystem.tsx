@@ -9,12 +9,12 @@ const MotivationSystem = ({
   cardsCount,
   studyTime,
 }: MotivationSystemProps) => {
-  const [message, setMessage] = useState("Welcome! 🌟");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     let currentMessage = "";
     if (cardsCount === 0) {
-      currentMessage = "Welcome! 🌟";
+      currentMessage = "";
     } else if (cardsCount === 1) {
       currentMessage = "You created your first card! 🎯";
     } else if (cardsCount === 5) {
@@ -35,6 +35,8 @@ const MotivationSystem = ({
 
     setMessage(currentMessage);
   }, [cardsCount, studyTime]);
+
+  if (!message) return null;
 
   return (
     <div className="motivation-system">
